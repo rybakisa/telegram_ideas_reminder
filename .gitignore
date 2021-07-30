@@ -138,8 +138,9 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-### JetBrains template
+### IDEs template
 .idea/
+.vscode
 
 ### Project template
 *.session
