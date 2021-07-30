@@ -17,9 +17,17 @@ class RandomMessageSender:
         send_from_entity = await self.client.get_entity(self.send_from)
         send_to_entity = await self.client.get_entity(self.send_to)
 
-        messages = await self.client.get_messages(send_from_entity, limit=None)
+        messages = await self.client.get_messages(
+            send_from_entity,
+            limit=None,
+        )
         random_message = random.choice(messages)
-        await self.client.forward_messages(entity=send_to_entity, messages=random_message, from_peer=send_from_entity)
+
+        await self.client.forward_messages(
+            entity=send_to_entity,
+            messages=random_message,
+            from_peer=send_from_entity,
+        )
 
     def run(self):
         with self.client as client:
