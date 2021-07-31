@@ -1,4 +1,6 @@
 import random
+
+from telethon.tl.types import MessageService
 from telethon import TelegramClient
 
 
@@ -21,6 +23,7 @@ class RandomMessageSender:
             send_from_entity,
             limit=None,
         )
+        messages = list(filter(lambda msg: not isinstance(msg, MessageService), messages))
         random_message = random.choice(messages)
 
         await self.client.forward_messages(
