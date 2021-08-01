@@ -1,13 +1,14 @@
 import random
 
 from telethon.tl.types import MessageService
+from telethon.sessions import StringSession
 from telethon import TelegramClient
 
 
 class RandomMessageSender:
-    def __init__(self, api_id, api_hash, send_from, send_to):
+    def __init__(self, api_id, api_hash, login_string, send_from, send_to):
         self.client = TelegramClient(
-            'anon',
+            StringSession(login_string),
             api_id=api_id,
             api_hash=api_hash
         )

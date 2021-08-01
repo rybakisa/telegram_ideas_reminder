@@ -6,6 +6,7 @@ from random_message_sender import RandomMessageSender
 sender = RandomMessageSender(
     api_id=settings.TELEGRAM_API_ID,
     api_hash=settings.TELEGRAM_API_HASH,
+    login_string=settings.TELEGRAM_LOGIN_STRING,
     send_from=settings.TELEGRAM_FROM_CHAT_LINK,
     send_to=settings.TELEGRAM_TO_CHAT_LINK,
 )
